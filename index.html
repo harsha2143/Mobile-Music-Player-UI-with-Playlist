@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Music Player</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="music-player">
+            <nav>
+                <div class="circle" id="prevSong" onclick="playPrevious()">
+                    <i class="fa-solid fa-angle-left"></i>
+                </div>
+                <div class="circle" id="menuIcon" onclick="toggleMenu()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </nav>
+
+            
+
+            <img src="Media/Images/galli.jpeg" alt="Song Image" class="song-img" id="songImage">
+            <h1 id="songTitle">Agnathavasi</h1><br>
+            <p id="songArtist">Anirudh RaviChandran</p>
+
+            <ul id="songList" class="song-list hidden">
+                <!-- Dynamically generated list of songs -->
+            </ul>
+
+            <!-- Audio player -->
+            <audio id="song">
+                <source id="songSource" src="Media/Audio/Galli Valuga.m4a" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+
+            <!-- Progress Bar -->
+            <input type="range" value="0" id="progress">
+
+            <!-- Controls -->
+            <div class="controls">
+                <div><i class="fa-solid fa-backward" id="prevIcon" onclick="playPrevious()"></i></div>
+                <div id="ctrlicon" class="fa-solid fa-play" onclick="playpause()"></div>
+                <div><i class="fa-solid fa-forward" id="nextIcon" onclick="playNext()"></i></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
